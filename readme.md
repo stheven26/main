@@ -1,0 +1,3 @@
+Study Kasus:
+Sebuah sistem harus memasukkan nama dan password terlebih dahulu agar bisa mengakses fitur yang ada di dalamnya. Dimana sistem akan mengenali nama sebagai "stheven" dan password "123456" jika nama dan password yang diberikan salah, maka tidak dapat mengakses fitur-fiturnya. Dimana fitur di dalamnya ada 4, yaitu: belajar, konversi, berbelanja dan menghitung operasi matematika. 
+Jika nama dan password yang dimasukkan benar sistem akan menyapa serta dapat mengakses fitur di dalamnya. Pengguna harus memberikan input (antara 1 sampai 4) untuk dapat mengakses 4 fitur utama sesuai kebutuhan. Jika sudah masuk salah satu fitur pengguna diminta lagi untuk memberikan input (antara 1 sampai 3) berdasarkan kebutuhan pengguna.

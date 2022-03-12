@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	module "github.com/stheven26/module"
 )
@@ -22,7 +23,7 @@ func main() {
 	module.VerifikasiAkses(authorAccess.Nama, authorAccess.Password, blokirAkses)
 
 	if authorAccess.Nama == "stheven" && authorAccess.Password == "123456" {
-		fmt.Print("\nActivity:\n1.Belajar\n2.Melakukan Konversi\n3.Memeasan Kopi\n")
+		fmt.Print("\nActivity:\n1.Belajar\n2.Melakukan Konversi\n3.Berbelanja\n4.Operasi Matematika\n")
 		fmt.Print("Enter Option Activity: ")
 		var OptionActivity int
 		fmt.Scan(&OptionActivity)
@@ -59,15 +60,22 @@ func main() {
 				fmt.Println("Masukkan pilihan konversi anda dengan benar!")
 			}
 		} else if OptionActivity == 3 {
-			fmt.Print("======")
+			go module.Belanja()
+			time.Sleep(1 * time.Millisecond)
+			go module.Membayar()
+			time.Sleep(3 * time.Millisecond)
+			go module.SelesaiBelanja()
+			time.Sleep(5 * time.Millisecond)
+		} else if OptionActivity == 4 {
+			module.Matematika()
 		} else {
 			fmt.Println("Masukkan pilihan aktivitas anda dengan benar!")
 		}
 	} else if authorAccess.Nama == "stheven" && authorAccess.Password != "123456" {
-		fmt.Println("'Masukkan password yang benar!'")
+		fmt.Println("'Masukkan password dengan benar!'")
 	} else if authorAccess.Nama != "stheven" && authorAccess.Password == "123456" {
-		fmt.Println("Anda bukan stheven, jadi anda tidak memiliki akses'")
+		fmt.Println("Masukkan nama dengan benar!'")
 	} else {
-		fmt.Print("Koreksi kembali data yang anda masukkan!'")
+		fmt.Print("Anda tidak memiliki akses!'")
 	}
 }
